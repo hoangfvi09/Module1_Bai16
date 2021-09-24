@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc hanh lop hinh tron</title>
+</head>
+<body>
+<script>
+    class circle{
+        constructor(r,color) {
+            this.radius=r
+            this.color = color
+        }
+        getRadius(){
+            return this.radius
+        }
+        getArea(){
+            return this.radius*this.radius*Math.PI
+        }
+    }
+    let circle1= new circle(4,'red')
+    alert(circle1.getArea())
+    alert(circle1.getRadius())
+
+
+</script>
+</body>
+</html>

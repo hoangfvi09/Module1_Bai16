@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="setTimeout(thingsOnRoadMove,10)">
+
+<img id="huyn" src="huyn.jpg" height="77" width="82" style="position:absolute;left:500px; top:0px;"/>
+<button onclick="play=true"> Play</button>
+<script>
+    let play
+    function thingsOnRoadMove(){
+            let element=document.getElementById("huyn")
+        if(element.style.top>=window.height){
+            element.style.top=0 +'px'
+
+        }
+            element.style.top =parseInt(element.style.top) + 10 + 'px';
+            if(element.style.top>=screen.height){
+                element.style.top=0 +'px'
+
+            }
+    }
+
+    setInterval(thingsOnRoadMove,50)
+
+</script>
+</body>
+
+</html>

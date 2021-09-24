@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let keyboards1=[3,1]
+    let drives1=[5,2,8]
+    let budget=10
+    let keyboardAndDrive=[]
+    let temp;
+
+    function getMoneySpent(keyboards, drives,b) {
+        let difference=[]
+        for (let i=0; i<keyboards.length;i++){
+            for(let j=0;j<drives.length;j++){
+                temp=keyboards[i]+drives[j]
+                keyboardAndDrive.push(temp)
+            }
+        }
+        difference=keyboardAndDrive.map(differenceCal)
+        let minDiff=difference[0]
+        let minIndex=0
+        for(let i=0, minDiff=difference[0],minIndex=0;i<difference.length;i++){
+            if((minDiff>difference[i])&&(difference[i]>=0)){
+                minDiff=difference[i]
+                minIndex=i
+            }
+            console.log(difference[i])
+        }
+        if (minDiff<0){
+            return -1
+        }else{
+            return keyboardAndDrive[minIndex]
+        }
+        function differenceCal(num){
+            return (b-num)
+        }
+    }
+
+    alert(getMoneySpent(keyboards1,drives1,budget))
+</script>
+</body>
+</html>

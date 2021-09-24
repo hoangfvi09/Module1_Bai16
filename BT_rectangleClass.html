@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class rect{
+        constructor(width,height) {
+            this.Width=width
+            this.Height=height
+        }
+        getPerimeter(){
+            return (this.Width+this.Height)*2
+        }
+        getArea(){
+            return (this.Width*this.Height)
+        }
+        drawRectangle(){
+            let ctx=document.getElementById("myCanvas").getContext("2d")
+            ctx.beginPath();
+            ctx.rect(20, 20, this.Width, this.Height);
+            ctx.stroke();
+        }
+    }
+    let rectxinhdep=new rect(500,300)
+    rectxinhdep.drawRectangle()
+    alert(rectxinhdep.getPerimeter())
+    alert(rectxinhdep.getArea())
+
+</script>
+</body>
+</html>

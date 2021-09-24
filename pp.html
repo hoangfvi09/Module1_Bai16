@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class HocVien {
+        ten;
+        diem;
+        constructor(ten, diem) {
+            this.ten=ten;
+            this.diem=diem;
+        }
+        lambai(){
+            this.diem+=2
+        }
+        ghinote(){
+            this.diem++
+        }
+        chodiem(fen,score){
+            fen.diem+=score
+            this.diem-=score
+        }
+    }
+    let hvi=new HocVien("Hoang Vi",5)
+    let somebody=new HocVien("ban cua hvi",5)
+    hvi.chodiem(somebody,4)
+    alert(hvi.ten +' co diem la '+ hvi.diem)
+    alert(somebody.ten +' co diem la '+somebody.diem)
+</script>
+</body>
+</html>

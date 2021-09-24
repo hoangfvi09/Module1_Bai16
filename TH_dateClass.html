@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc hanh Xay dung lop Date</title>
+</head>
+<body>
+<script>
+    class MyDate{
+        constructor(day,month,year) {
+            this.day = day;
+
+            this.month = month;
+
+            this.year = year;
+        }
+        getDay() {
+            return this.day;
+        }
+        getMonth() {
+            return this.month;
+        }
+        getYear() {
+            return this.year;
+        }
+        setDay(day) {
+            this.day  = day;
+        }
+        setMonth(month) {
+            this.month  = month;
+        }
+        setYear(year) {
+            this.year  = year;
+        }
+    }
+    let date=new MyDate(9,9,1998)
+
+    date.setDay(24)
+    date.setMonth(1)
+    date.setYear(1998)
+
+    let day=date.getDay()
+    let month=date.getMonth()
+    let year=date.getYear()
+    alert(day+'/'+month+'/'+year)
+</script>
+
+</body>
+</html>

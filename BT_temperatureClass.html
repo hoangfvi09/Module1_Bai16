@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT xay dung lop mo ta Temperature</title>
+</head>
+<body>
+<script>
+    class temperature {
+        constructor(celsius){
+            this.celsius=celsius
+        }
+        celsiusToFahrenheit(){
+            return (this.celsius*1.8+32)
+        }
+        celsiusToKevin(){
+            return (this.celsius+273.15)
+        }
+    }
+    let celsius1=new temperature(36)
+    alert(celsius1.celsiusToFahrenheit())
+    alert(celsius1.celsiusToKevin())
+</script>
+</body>
+</html>
