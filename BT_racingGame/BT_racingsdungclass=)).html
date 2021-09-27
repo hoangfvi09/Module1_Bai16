@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Racing dung classssssssssssss :<<<<<<<<<<<<<<<<<< i hate classssssss</title>
+</head>
+<body>
+
+<div id="display"></div>
+
+
+<img src="green" height=1000" width="10" style="position:absolute;left:500px; top:0px">
+<img src="green" height=1000" width="10" style="position:absolute;left:650px; top:0px">
+<img src="green" height=1000" width="10" style="position:absolute;left:800px; top:0px">
+<img src="green" height=1000" width="10" style="position:absolute;left:950px; top:0px">
+<button onclick="startGame()">START</button>
+<script>
+    class Car {
+        x;
+        y;
+        src;
+
+        constructor(x, y, src) {
+            this.x = x;
+            this.y = y;
+            this.src = src
+        }
+
+        goLeft() {
+            this.x -= 150
+        }
+
+        goRight() {
+            this.x += 150
+        }
+
+        draw() {
+            document.getElementById('car').style.top = this.y+'px'
+            document.getElementById('car').style.left= this.x+'px'
+            document.getElementById('car').src=this.src
+
+        }
+    }
+
+    class Obstacle {
+        x;
+        y;
+        speed;
+        src;
+        id;
+
+        constructor(id) {
+            this.x = 500 + Math.floor(Math.random() * 3) * 150 +'px'
+            this.y = 0+'px'
+            this.speed = 5
+            this.src = 'fren' + (Math.floor(Math.random() * 3) + 1) + '.jpg'
+            this.id=id
+        }
+
+        moveDown() {
+            if (this.y > 850) {
+                this.y = 0
+            } else {
+                this.y += this.speed
+            }
+            document.getElementById(this.id).style.left = this.x
+        }
+        draw() {
+
+            document.getElementById(this.id).style.top = this.y+'px'
+            document.getElementById(this.id).style.left=this.x+'px'
+            document.getElementById(this.id).src=this.src
+        }
+    }
+
+
+
+    function startGame() {
+        document.getElementById('display').innerHTML+='<img id="car" width="150px" height="200px">\n' +
+            '<img id="fren1" width="150px" height="150px">\n' +
+            '<img id="fren2" width="150px" height="150px">'
+        let carHvi = new Car(500, 640, 'car.jpg')
+        let fen1 = new Obstacle('fren1')
+        let fen2 = new Obstacle('fren2')
+        carHvi.draw()
+        fen1.draw()
+        fen2.draw()
+
+    }
+
+</script>
+</body>
+</html>
